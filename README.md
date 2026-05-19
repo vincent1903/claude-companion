@@ -5,7 +5,9 @@ Type your question in the Shell search bar, hit Enter, and the answer appears
 in a tiny GTK4 window — meant as a replacement for the Claude Desktop Quick
 Window, which doesn't work under GNOME Wayland.
 
-![screenshot](docs/screenshot.png)
+![Search bar with Claude Companion result](docs/search-bar.png)
+
+![Chat window showing a Markdown-rendered response](docs/chat-window.png)
 
 ## Features
 
