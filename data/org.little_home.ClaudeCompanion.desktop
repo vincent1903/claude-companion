@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Claude Companion
+Comment=Mini-fenêtre de chat avec Claude (API Anthropic)
+Exec=claude-companion
+Icon=org.little_home.ClaudeCompanion
+Categories=Utility;Network;
+Terminal=false
+StartupNotify=false
+StartupWMClass=org.little_home.ClaudeCompanion

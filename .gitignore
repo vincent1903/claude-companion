@@ -1,0 +1,27 @@
+# Flatpak build
+build-dir/
+.flatpak-builder/
+repo/
+*.flatpak
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+venv/
+.venv/
+*.egg-info/
+
+# Compiled translations (regenerated at build)
+po/*.mo
+po/build/
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+
+# Logs
+*.log

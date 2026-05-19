@@ -1,0 +1,85 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: claude-companion 0.1.0\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Anthropic API key required"
+msgstr "Clé API Anthropic requise"
+
+msgid "Appearance and language"
+msgstr "Apparence et langue"
+
+msgid "Ask anything…"
+msgstr "Pose ta question…"
+
+msgid "Ask Claude"
+msgstr "Demander à Claude"
+
+msgid "Claude Haiku 4.5 (fast, economical)"
+msgstr "Claude Haiku 4.5 (rapide, économique)"
+
+msgid "Claude model"
+msgstr "Modèle Claude"
+
+msgid "Claude Opus 4.7 (most powerful)"
+msgstr "Claude Opus 4.7 (le plus puissant)"
+
+msgid "Claude Sonnet 4.6 (balanced)"
+msgstr "Claude Sonnet 4.6 (équilibré)"
+
+msgid "Dark"
+msgstr "Sombre"
+
+msgid "error"
+msgstr "erreur"
+
+msgid "Interface and Claude reply language (restart required for UI)"
+msgstr "Interface et langue de réponse de Claude (redémarrage requis pour l'UI)"
+
+msgid "Invalid key (must start with sk-ant-)."
+msgstr "Clé invalide (doit commencer par sk-ant-)."
+
+msgid "Language"
+msgstr "Langue"
+
+msgid "Light"
+msgstr "Clair"
+
+msgid "Max tokens per response"
+msgstr "Max tokens par réponse"
+
+msgid "Model"
+msgstr "Modèle"
+
+msgid "New conversation"
+msgstr "Nouvelle conversation"
+
+msgid "Open a chat window with Claude"
+msgstr "Ouvre une fenêtre de chat avec Claude"
+
+msgid "Paste your sk-ant-… key and confirm. Stored in the GNOME keyring."
+msgstr "Colle ta clé sk-ant-… puis valide. Stockée dans le trousseau GNOME."
+
+msgid "Preferences"
+msgstr "Réglages"
+
+msgid "Save"
+msgstr "Enregistrer"
+
+msgid "Sent with every message as permanent context."
+msgstr "Envoyées à chaque message comme contexte permanent."
+
+msgid "System"
+msgstr "Système"
+
+msgid "System instructions"
+msgstr "Instructions système"
+
+msgid "Theme"
+msgstr "Thème"
+
+msgid "You"
+msgstr "Vous"

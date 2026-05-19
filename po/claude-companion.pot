@@ -1,0 +1,122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Aperture Effect
+# This file is distributed under the same license as the claude-companion package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: claude-companion 0.1.0\n"
+"Report-Msgid-Bugs-To: vincent@aperture-effect.com\n"
+"POT-Creation-Date: 2026-05-19 15:10+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/provider.py:151
+msgid "Ask Claude"
+msgstr ""
+
+#: src/provider.py:152
+msgid "Open a chat window with Claude"
+msgstr ""
+
+#: src/window.py:41 src/window.py:65
+msgid "System"
+msgstr ""
+
+#: src/window.py:42
+msgid "Light"
+msgstr ""
+
+#: src/window.py:43
+msgid "Dark"
+msgstr ""
+
+#: src/window.py:56
+msgid "Claude Haiku 4.5 (fast, economical)"
+msgstr ""
+
+#: src/window.py:57
+msgid "Claude Sonnet 4.6 (balanced)"
+msgstr ""
+
+#: src/window.py:58
+msgid "Claude Opus 4.7 (most powerful)"
+msgstr ""
+
+#: src/window.py:116
+msgid "Anthropic API key required"
+msgstr ""
+
+#: src/window.py:119
+msgid "Paste your sk-ant-… key and confirm. Stored in the GNOME keyring."
+msgstr ""
+
+#: src/window.py:125
+msgid "Save"
+msgstr ""
+
+#: src/window.py:131
+msgid "Invalid key (must start with sk-ant-)."
+msgstr ""
+
+#: src/window.py:166
+msgid "New conversation"
+msgstr ""
+
+#: src/window.py:171 src/window.py:306
+msgid "Preferences"
+msgstr ""
+
+#: src/window.py:206
+msgid "Ask anything…"
+msgstr ""
+
+#: src/window.py:252
+msgid "You"
+msgstr ""
+
+#: src/window.py:266
+msgid "error"
+msgstr ""
+
+#: src/window.py:311
+msgid "Appearance and language"
+msgstr ""
+
+#: src/window.py:315
+msgid "Theme"
+msgstr ""
+
+#: src/window.py:328
+msgid "Language"
+msgstr ""
+
+#: src/window.py:329
+msgid "Interface and Claude reply language (restart required for UI)"
+msgstr ""
+
+#: src/window.py:339
+msgid "System instructions"
+msgstr ""
+
+#: src/window.py:340
+msgid "Sent with every message as permanent context."
+msgstr ""
+
+#: src/window.py:355
+msgid "Model"
+msgstr ""
+
+#: src/window.py:359
+msgid "Claude model"
+msgstr ""
+
+#: src/window.py:366
+msgid "Max tokens per response"
+msgstr ""

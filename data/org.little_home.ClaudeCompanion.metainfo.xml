@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.little_home.ClaudeCompanion</id>
+  <name>Claude Companion</name>
+  <summary>Mini-fenêtre de chat avec Claude depuis la recherche GNOME</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+
+  <description>
+    <p>
+      Une mini-fenêtre de chat avec Claude (API Anthropic) lancée depuis
+      la recherche d'Activités de GNOME Shell. Utilise votre propre clé API
+      Anthropic, stockée dans le trousseau GNOME.
+    </p>
+    <p>Non affilié à Anthropic.</p>
+  </description>
+
+  <launchable type="desktop-id">org.little_home.ClaudeCompanion.desktop</launchable>
+
+  <provides>
+    <dbus type="session">org.little_home.ClaudeCompanion.SearchProvider</dbus>
+  </provides>
+
+  <categories>
+    <category>Utility</category>
+    <category>Network</category>
+  </categories>
+
+  <content_rating type="oars-1.1" />
+
+  <releases>
+    <release version="0.1.0" date="2026-05-19">
+      <description>
+        <p>Première version : SearchProvider GNOME + chat streaming, rendu Markdown, réglages utilisateur.</p>
+      </description>
+    </release>
+  </releases>
+</component>

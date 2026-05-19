@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=org.little_home.ClaudeCompanion.SearchProvider
+Exec=/app/bin/claude-companion-provider

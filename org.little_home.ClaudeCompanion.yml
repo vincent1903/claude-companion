@@ -1,0 +1,56 @@
+app-id: org.little_home.ClaudeCompanion
+runtime: org.gnome.Platform
+runtime-version: '50'
+sdk: org.gnome.Sdk
+command: claude-companion
+
+finish-args:
+  - --share=ipc
+  - --share=network
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --device=dri
+  - --talk-name=org.freedesktop.secrets
+  - --own-name=org.little_home.ClaudeCompanion.SearchProvider
+  - --filesystem=xdg-config/claude-companion:create
+
+modules:
+  - name: claude-companion
+    buildsystem: simple
+    build-options:
+      build-args:
+        - --share=network
+    build-commands:
+      # Python deps (pulled from PyPI thanks to --share=network)
+      - pip3 install --prefix=${FLATPAK_DEST} --no-warn-script-location
+        anthropic markdown-it-py
+
+      # Application source
+      - install -Dm755 bin/claude-companion ${FLATPAK_DEST}/bin/claude-companion
+      - install -Dm755 bin/claude-companion-provider ${FLATPAK_DEST}/bin/claude-companion-provider
+      - install -d ${FLATPAK_DEST}/share/claude-companion
+      - install -m644 src/api.py src/window.py src/provider.py src/keyring.py
+        src/markdown_render.py src/config.py src/i18n.py
+        ${FLATPAK_DEST}/share/claude-companion/
+
+      # Translations
+      - for po in po/*.po; do
+        lang=$(basename "$po" .po);
+        install -d ${FLATPAK_DEST}/share/locale/$lang/LC_MESSAGES;
+        msgfmt "$po" -o ${FLATPAK_DEST}/share/locale/$lang/LC_MESSAGES/claude-companion.mo;
+        done
+
+      # Desktop integration
+      - install -Dm644 data/org.little_home.ClaudeCompanion.desktop
+        ${FLATPAK_DEST}/share/applications/org.little_home.ClaudeCompanion.desktop
+      - install -Dm644 data/org.little_home.ClaudeCompanion.metainfo.xml
+        ${FLATPAK_DEST}/share/metainfo/org.little_home.ClaudeCompanion.metainfo.xml
+      - install -Dm644 data/org.little_home.ClaudeCompanion.search-provider.ini
+        ${FLATPAK_DEST}/share/gnome-shell/search-providers/org.little_home.ClaudeCompanion.search-provider.ini
+      - install -Dm644 data/org.little_home.ClaudeCompanion.SearchProvider.service
+        ${FLATPAK_DEST}/share/dbus-1/services/org.little_home.ClaudeCompanion.SearchProvider.service
+      - install -Dm644 data/icons/hicolor/scalable/apps/org.little_home.ClaudeCompanion.svg
+        ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/org.little_home.ClaudeCompanion.svg
+    sources:
+      - type: dir
+        path: .
