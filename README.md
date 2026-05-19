@@ -1,4 +1,4 @@
-# Claude Companion
+# Claude Companion (fully developped by Claude)
 
 A small Claude (Anthropic API) chat window integrated into GNOME Shell search.
 Type your question in the Shell search bar, hit Enter, and the answer appears
