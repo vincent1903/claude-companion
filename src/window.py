@@ -32,6 +32,12 @@ from api import ClaudeChat
 from keyring import load_api_key, store_api_key
 from markdown_render import ensure_tags, render_markdown
 
+# Optional Home Assistant bonus (not in public git).
+try:
+    import homeassistant as _ha
+except ImportError:
+    _ha = None
+
 APP_ID = "org.little_home.ClaudeCompanion"
 APP_NAME = "Claude Companion"
 
@@ -367,6 +373,10 @@ class QuickWindow(Adw.ApplicationWindow):
         tokens_row.set_value(self.cfg.get("max_tokens", 4096))
         model_group.add(tokens_row)
         page.add(model_group)
+
+        # --- Home Assistant (bonus, untracked) ------------------------
+        if _ha is not None:
+            page.add(_ha.build_prefs_group())
 
         dlg.add(page)
 

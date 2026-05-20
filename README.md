@@ -18,6 +18,7 @@ Window, which doesn't work under GNOME Wayland.
 - UI in English, French, German, Spanish, Italian (and Claude's reply language follows)
 - Configurable system prompt and `max_tokens`
 - API key stored in the GNOME keyring via libsecret
+- Optional Home Assistant control: ask Claude to turn on lights, close covers, etc.
 
 ## Requirements
 
@@ -66,14 +67,31 @@ Flatpak disables every exported search provider by default. Once installed:
 - Type your question — it appears with the title "Ask Claude: …"
 - `Enter` opens the window and sends the prompt directly
 
+## Home Assistant (optional)
+
+Claude can control your Home Assistant instance through tool use. Enable it in
+**Preferences → Home Assistant**:
+
+1. In Home Assistant, create a **Long-Lived Access Token**
+   (user profile → Security → Create token)
+2. Toggle "Enable Home Assistant tools", set your instance URL
+   (default `http://homeassistant.local:8123`), and paste the token
+3. The token is stored in the GNOME keyring — never on disk or in config files
+
+Then ask things like *"turn on the office lights"* or *"close the living room
+covers"*. Claude is given three tools — `ha_list_entities`, `ha_get_state` and
+`ha_call_service` — which hit the Home Assistant REST API. The integration is
+off until a token is present, so the app behaves identically without it.
+
 ## Architecture
 
 ```
 src/
 ├── window.py            # Main GTK4 window, preferences, chat
 ├── provider.py          # D-Bus SearchProvider2 service
-├── api.py               # Anthropic wrapper (streaming, system prompt, language)
+├── api.py               # Anthropic wrapper (streaming, tool-use loop, language)
 ├── keyring.py           # Read/write API key via libsecret
+├── homeassistant.py     # Home Assistant REST client + Anthropic tools
 ├── markdown_render.py   # Markdown → Gtk.TextTag rendering
 ├── config.py            # JSON config (~/.config/claude-companion/)
 └── i18n.py              # gettext setup (dynamic locale)

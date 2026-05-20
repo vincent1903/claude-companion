@@ -32,6 +32,10 @@ modules:
       - install -m644 src/api.py src/window.py src/provider.py src/keyring.py
         src/markdown_render.py src/config.py src/i18n.py
         ${FLATPAK_DEST}/share/claude-companion/
+      # Optional bonus modules (kept out of public git, install only if present)
+      - if [ -f src/homeassistant.py ]; then
+        install -m644 src/homeassistant.py ${FLATPAK_DEST}/share/claude-companion/;
+        fi
 
       # Translations
       - for po in po/*.po; do
